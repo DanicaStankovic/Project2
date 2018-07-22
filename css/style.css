@@ -1,0 +1,63 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    margin: 5px;
+    text-align: center;
+}
+
+h3 {
+    margin: 5px;
+    text-indent: 20px;
+}
+
+form {
+    border-bottom: 1px solid #FFEF96;
+    padding: 10px;
+}
+
+#poljeZaUnosTaska, #poljeFilterTaskova {
+    margin: 5px 20px;
+    border: none;
+    border-bottom: 2px solid #FFEF96;
+    height: 30px;
+    width: 300px;
+    text-indent: 10px;
+}
+
+.dugme {
+    background-color: #36486B;
+    color: white;
+    height: 30px;
+    width: 200px;
+    margin-left: 20px;
+    border: none;
+}
+  
+.dugme:hover {
+   background-color: #bbb;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    list-style-type: none;
+    background: #eee;
+    font-size: 16px;
+    background-color: white;
+    border: 3px solid #FFEF96;
+    margin: 5px 20px;
+    padding: 5px;
+    width: 550px;
+    box-sizing: border-box;
+    height: 36px;
+}
+
+.xIcon {
+    float: right;
+}

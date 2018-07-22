@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/moja-ikonica.png">
+    <title>TaskIT</title>
+</head>
+<body>
+    <h1><img src="img/moja-ikonica.png" height="30">TaskIT</h1>
+    <h3>Task List</h3>
+    <form id="unosTaskovaForma">
+        <input type="text" id="poljeZaUnosTaska" placeholder="New Task" maxlength="70" required><br>
+        <input type="button" value="ADD TASK" class="dugme" onclick="sacuvajTaskSaOpcijomBrisanja()">
+    </form>
+    <h3>Tasks</h3>
+    <form id="filterForm">
+        <input type="text" onkeyup="pretragaListe()" placeholder="Filter Tasks" id="poljeFilterTaskova" maxlength="20"><br>
+    </form>
+    <ul id="listaTaskova"></ul>
+    <form>
+        <input type="button" value="CLEAR TASKS" class="dugme" onclick="brisanjeSvihTaskova()">
+    </form>
+<script type="text/javascript" src="js/Project2.js"></script>
+</body>
+</html>
