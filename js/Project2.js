@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("listaTaskova").innerHTML = localStorage.getItem("sacuvaniTaskovi");
- });
+    document.getElementById("listaTaskova").innerHTML = localStorage.getItem("sacuvaniTaskovi");});
 
 function sacuvajTaskSaOpcijomBrisanja() {
     let tekstTaska = document.getElementById("poljeZaUnosTaska").value;
     taskNaListi = document.createElement("li");
-    let tekstTaskaNaListi = document.createTextNode(tekstTaska);
+    let tekstTaskaNaListi = document.createElement("p");
+    tekstTaskaNaListi.innerHTML = tekstTaska;
+    tekstTaskaNaListi.setAttribute("word-break", "break-all");
     taskNaListi.appendChild(tekstTaskaNaListi);
+    let listaTaskova = document.getElementById("listaTaskova");
     listaTaskova.appendChild(taskNaListi);
     let iksic = document.createElement("a");
     iksic.setAttribute("class", "xIcon");
     iksic.setAttribute("onclick", "brisiTask(event)");
-    let slicicaZaBrisanje = document.createElement("img");
+    let slicicaZaBrisanje = document.createElement("img");    
     slicicaZaBrisanje.setAttribute ("src", "img/x-icon.png");
     slicicaZaBrisanje.setAttribute ("alt", "X");
-    slicicaZaBrisanje.setAttribute ("height", "20px");
+    slicicaZaBrisanje.setAttribute ("height", "12px");
     iksic.appendChild(slicicaZaBrisanje);
     taskNaListi.appendChild(iksic);
     document.getElementById("poljeZaUnosTaska").value = "";

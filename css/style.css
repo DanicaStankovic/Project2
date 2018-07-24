@@ -1,5 +1,9 @@
 body {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
+    width: 450px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: .5px solid lightgrey;
 }
 
 h1 {
@@ -8,40 +12,67 @@ h1 {
 }
 
 h3 {
-    margin: 5px;
-    text-indent: 20px;
+    margin: 25px auto 15px auto;
+    text-indent: 25px;
+    font-weight: 400;
+}
+
+#podebljavanje {
+    font-weight: 600;
 }
 
 form {
-    border-bottom: 1px solid #FFEF96;
     padding: 10px;
+    width: 450px;
+    box-sizing: border-box;
+}
+
+.donjiBorder {
+    border-bottom: .5px solid lightgrey;
 }
 
 #poljeZaUnosTaska, #poljeFilterTaskova {
-    margin: 5px 20px;
+    margin: 8px;
     border: none;
-    border-bottom: 2px solid #FFEF96;
+    border-bottom: 2px solid lightgrey;
     height: 30px;
-    width: 300px;
+    width: 400px;
     text-indent: 10px;
 }
 
-.dugme {
-    background-color: #36486B;
+#dugmeSubmit, #dugmeClear {
+    background-color: #27A69B;
     color: white;
     height: 30px;
-    width: 200px;
-    margin-left: 20px;
+    width: 100px;
+    margin-left: 5px;
     border: none;
+    border-radius: 3px;
+    padding: 7px;
+}
+
+#dugmeSubmit {
+    margin-bottom: 40px;
+}
+
+#dugmeClear {
+    background-color: black;
+    width: 130px;
 }
   
 .dugme:hover {
    background-color: #bbb;
 }
 
+p {
+    margin: 0;
+    text-align: justify;
+}
+
 ul {
     margin: 0;
     padding: 0;
+    width: 450px;
 }
 
 ul li {
@@ -50,14 +81,16 @@ ul li {
     background: #eee;
     font-size: 16px;
     background-color: white;
-    border: 3px solid #FFEF96;
-    margin: 5px 20px;
-    padding: 5px;
-    width: 550px;
+    border: 1px solid lightgray;
+    margin: 0 15px;
+    width: 400px;
     box-sizing: border-box;
-    height: 36px;
+    min-height: 30px;
+    padding: 4px 42px 4px 10px;
 }
 
 .xIcon {
-    float: right;
+    position: absolute;
+    top: 3px;
+    right: 30px;
 }
