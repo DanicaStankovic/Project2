@@ -6,7 +6,6 @@ function sacuvajTaskSaOpcijomBrisanja() {
     taskNaListi = document.createElement("li");
     let tekstTaskaNaListi = document.createElement("p");
     tekstTaskaNaListi.innerHTML = tekstTaska;
-    tekstTaskaNaListi.setAttribute("word-break", "break-all");
     taskNaListi.appendChild(tekstTaskaNaListi);
     let listaTaskova = document.getElementById("listaTaskova");
     listaTaskova.appendChild(taskNaListi);
