@@ -95,3 +95,33 @@ ul li {
     top: 3px;
     right: 30px;
 }
+
+@media screen and (max-width: 450px) {
+body, form, ul {
+    width: 100%;
+}
+
+h3 {
+    margin: 10px auto 5px auto;
+    text-indent: 15px;
+}
+
+#poljeZaUnosTaska, #poljeFilterTaskova {
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    width: 85%;
+    margin: auto;
+    text-indent: 10px;
+}
+
+#dugmeSubmit {
+    margin: 10px 0 40px 0;
+}
+
+ul li {
+    width: 90%;
+}
+
+.xIcon {
+    right: 20px;
+}
