@@ -37,15 +37,6 @@ form {
 }
 
 #dugmeSubmit, #dugmeClear {
-    background-color: #36486B;
-    color: white;
-    height: 30px;
-    width: 200px;
-    margin-left: 20px;
-    border: none;
-}
-
-#dugmeSubmit, #dugmeClear {
     background-color: #27A69B;
     color: white;
     height: 30px;
