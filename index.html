@@ -11,17 +11,17 @@
 <body>
     <h1><img src="img/moja-ikonica.png" height="30">TaskIT</h1>
     <h3>Task List</h3>
-    <form class="donjiBorder">
-        <input type="text" id="poljeZaUnosTaska" placeholder="New Task" autofocus required onkeydown="if(event.keyCode == 13) document.getElementById('dugmeSubmit').click()"><br>
-        <input type="button" value="ADD TASK" id="dugmeSubmit" onclick="sacuvajTaskSaOpcijomBrisanja()">
+    <form id="unosTaskovaForma" class="donjiBorder" novalidate>
+        <input type="text" id="poljeZaUnosTaska" placeholder="New Task" required autofocus><br>
+        <input type="submit" value="ADD TASK" id="dugmeSubmit">
     </form>
-    <h3 id="podebljavanje">Tasks</h3>
+    <h3 class="podebljavanje">Tasks</h3>
     <form id="filterForm">
-        <input type="text" onkeyup="pretragaListe()" placeholder="Filter Tasks" id="poljeFilterTaskova"><br>
+        <input type="text" placeholder="Filter Tasks" id="poljeFilterTaskova"><br>
     </form>
     <ul id="listaTaskova"></ul>
     <form class="donjiBorder">
-        <input type="button" value="CLEAR TASKS" id="dugmeClear" onclick="brisanjeSvihTaskova()">
+        <input type="button" value="CLEAR TASKS" id="dugmeClear">
     </form>
 <script type="text/javascript" src="js/Project2.js"></script>
 </body>

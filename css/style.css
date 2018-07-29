@@ -17,7 +17,7 @@ h3 {
     font-weight: 400;
 }
 
-#podebljavanje {
+.podebljavanje {
     font-weight: 600;
 }
 
@@ -27,10 +27,6 @@ form {
     box-sizing: border-box;
 }
 
-.donjiBorder {
-    border-bottom: .5px solid lightgrey;
-}
-
 #poljeZaUnosTaska, #poljeFilterTaskova {
     margin: 8px;
     border: none;
@@ -38,6 +34,15 @@ form {
     height: 30px;
     width: 400px;
     text-indent: 10px;
+}
+
+#dugmeSubmit, #dugmeClear {
+    background-color: #36486B;
+    color: white;
+    height: 30px;
+    width: 200px;
+    margin-left: 20px;
+    border: none;
 }
 
 #dugmeSubmit, #dugmeClear {
@@ -59,8 +64,8 @@ form {
     background-color: black;
     width: 130px;
 }
-  
-.dugme:hover {
+
+#dugmeSubmit:hover, #dugmeClear:hover {
    background-color: #bbb;
 }
 
@@ -97,31 +102,32 @@ ul li {
 }
 
 @media screen and (max-width: 450px) {
-body, form, ul {
-    width: 100%;
-}
+    body, form, ul {
+        width: 100%;
+    }
 
-h3 {
-    margin: 10px auto 5px auto;
-    text-indent: 15px;
-}
+    h3 {
+        margin: 10px auto 5px auto;
+        text-indent: 15px;
+    }
 
-#poljeZaUnosTaska, #poljeFilterTaskova {
-    border: none;
-    border-bottom: 2px solid lightgrey;
-    width: 85%;
-    margin: auto;
-    text-indent: 10px;
-}
+    #poljeZaUnosTaska, #poljeFilterTaskova {
+        border: none;
+        border-bottom: 2px solid lightgrey;
+        width: 85%;
+        margin: auto;
+        text-indent: 10px;
+    }
 
-#dugmeSubmit {
-    margin: 10px 0 40px 0;
-}
+    #dugmeSubmit {
+        margin: 10px 0 40px 0;
+    }
 
-ul li {
-    width: 90%;
-}
+    ul li {
+        width: 90%;
+    }
 
-.xIcon {
-    right: 20px;
+    .xIcon {
+        right: 20px;
+    }
 }

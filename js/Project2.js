@@ -1,26 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("listaTaskova").innerHTML = localStorage.getItem("sacuvaniTaskovi");});
+document.addEventListener("DOMContentLoaded", preuzmiPodatke);
+function preuzmiPodatke() {
+    if (localStorage.getItem("sacuvaniTaskovi") !== null) {
+        document.getElementById("listaTaskova").innerHTML = localStorage.getItem("sacuvaniTaskovi");
+    }
+}
 
+document.getElementById("unosTaskovaForma").onsubmit = sacuvajTaskSaOpcijomBrisanja;
 function sacuvajTaskSaOpcijomBrisanja() {
     let tekstTaska = document.getElementById("poljeZaUnosTaska").value;
     taskNaListi = document.createElement("li");
     let tekstTaskaNaListi = document.createElement("p");
     tekstTaskaNaListi.innerHTML = tekstTaska;
     taskNaListi.appendChild(tekstTaskaNaListi);
-    let listaTaskova = document.getElementById("listaTaskova");
-    listaTaskova.appendChild(taskNaListi);
     let iksic = document.createElement("a");
     iksic.setAttribute("class", "xIcon");
     iksic.setAttribute("onclick", "brisiTask(event)");
-    let slicicaZaBrisanje = document.createElement("img");    
+    let slicicaZaBrisanje = document.createElement("img");
     slicicaZaBrisanje.setAttribute ("src", "img/x-icon.png");
     slicicaZaBrisanje.setAttribute ("alt", "X");
     slicicaZaBrisanje.setAttribute ("height", "12px");
     iksic.appendChild(slicicaZaBrisanje);
     taskNaListi.appendChild(iksic);
-    document.getElementById("poljeZaUnosTaska").value = "";
+    document.getElementById("listaTaskova").appendChild(taskNaListi);
     let sacuvajTaskove = document.getElementById("listaTaskova").innerHTML;
     localStorage.setItem("sacuvaniTaskovi", sacuvajTaskove);
+    document.getElementById("poljeZaUnosTaska").value = "";
 }
 
 function brisiTask(event) {
@@ -32,28 +36,34 @@ function brisiTask(event) {
         }
 }
 
+document.getElementById("poljeFilterTaskova").addEventListener("keyup", pretragaListe);
 function pretragaListe() {
     let poljeUnetogTeksta = document.getElementById("poljeFilterTaskova");
     let unetiTekstMalaSlova = poljeUnetogTeksta.value.toLowerCase();
-    let sviTaskovi = document.getElementsByTagName("li");
-        for (let i = 0; i < sviTaskovi.length; i++) {
-            let tekstTaska = sviTaskovi[i].childNodes[0];
-            let tekstTaskaMalaSlova = tekstTaska.nodeValue.toLowerCase();
+    let elementiListe = document.getElementsByTagName("li");
+    let paragrafiTekstTaska = document.getElementsByTagName("p");
+        for (let i = 0; i < paragrafiTekstTaska.length; i++) {
+            let tekstTaska = paragrafiTekstTaska[i].innerHTML;
+            let tekstTaskaMalaSlova = tekstTaska.toLowerCase();
             if (tekstTaskaMalaSlova.indexOf(unetiTekstMalaSlova) > -1) {
-                sviTaskovi[i].style.display = "";
+                elementiListe[i].style.display = "";
             }
             else {
-                sviTaskovi[i].style.display = "none";
+                elementiListe[i].style.display = "none";
             }
         }
 }
 
+document.getElementById("dugmeClear").addEventListener("click", brisanjeSvihTaskova);
 function brisanjeSvihTaskova() {
     let mojAlert = confirm("Are you sure? This action cannot be undone.");
     if (mojAlert == true) {
         let lista = document.getElementById("listaTaskova");
-        lista.remove(lista.childNodes);
-        localStorage.clear();
+        let elementiListe = lista.getElementsByTagName("li");
+        while (elementiListe.length > 0) {
+            lista.removeChild(elementiListe[0]);
+        }
+        localStorage.removeItem("sacuvaniTaskovi");
     }
 }
 /*
